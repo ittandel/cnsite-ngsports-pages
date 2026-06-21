@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NG体育 · 平台功能速览与使用导引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+        body {
+            background: #f0f2f5;
+            color: #1e1e2a;
+            line-height: 1.6;
+            padding: 2rem 1.2rem;
+        }
+        .wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* 英雄区域 */
+        .hero {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            padding: 2.2rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e4e8ed;
+            transition: box-shadow 0.2s;
+        }
+        .hero:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        }
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+        }
+        .hero h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #6b7280;
+            margin-left: 0.3rem;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: #374151;
+            max-width: 75%;
+        }
+        @media (max-width: 600px) {
+            .hero p { max-width: 100%; }
+            .hero { padding: 1.6rem 1.2rem; }
+        }
+
+        /* 卡片通用 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            border: 1px solid #e2e6ec;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            padding: 1.8rem 2rem;
+            transition: box-shadow 0.15s, transform 0.1s;
+        }
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            transform: translateY(-1px);
+        }
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .card h2 i {
+            font-style: normal;
+            background: #eef2f6;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #374151;
+        }
+        .card p, .card li {
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+        .card ul {
+            padding-left: 1.4rem;
+            list-style-type: disc;
+        }
+        .card ul li {
+            margin-bottom: 0.45rem;
+        }
+
+        /* 场景双列 */
+        .scenario-row {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .scenario-row .card {
+            flex: 1;
+            min-width: 200px;
+        }
+        @media (max-width: 560px) {
+            .scenario-row {
+                flex-direction: column;
+            }
+        }
+
+        /* 内联链接 没有多余引导词 */
+        a {
+            color: #1d4ed8;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.1s, background 0.1s;
+            font-weight: 500;
+        }
+        a:hover {
+            border-bottom-color: #1d4ed8;
+            background: #f0f4ff;
+        }
+
+        /* 提示 FAQ 区 */
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.2rem;
+        }
+        .faq-item p {
+            margin: 0;
+            color: #334155;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+            border-top: 1px solid #dce1e8;
+            padding-top: 1.8rem;
+        }
+        .footer-note a {
+            font-weight: 500;
+        }
+
+        .badge-light {
+            background: #eef1f5;
+            color: #2d3748;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 40px;
+            margin-left: 0.4rem;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e2e6ec;
+            margin: 1.4rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- 英雄区：直接点明用途 -->
+    <div class="hero">
+        <h1>
+            NG体育
+            <small>功能摘要 · 场景导引</small>
+        </h1>
+        <p>
+            这是一套面向体育资讯、赛事数据与互动社区的整合平台。如果你希望快速判断一个体育类站点是否适合自己，这里归纳了它的核心构成、使用场景以及一些客观提示。
+        </p>
+    </div>
+
+    <!-- 第一张卡片：平台摘要 -->
+    <div class="card-grid">
+        <div class="card">
+            <h2>📋 平台摘要</h2>
+            <p>
+                <a href="https://cnsite--ngsports.com">NG体育</a> 主要提供体育新闻聚合、实时比分、联赛积分榜以及用户讨论区等功能模块。整体内容覆盖足球、篮球、网球等主流项目，也包含部分小众运动的数据更新。站点结构偏向信息展示与轻社区互动，适合日常关注体育动态的用户。
+            </p>
+            <p style="margin-top: 0.6rem;">
+                与纯直播或博彩类站点不同，该平台更侧重内容沉淀与数据查阅，界面以列表和卡片式信息流为主。
+            </p>
+        </div>
+
+        <!-- 亮点卡片：差异化特点 -->
+        <div class="card">
+            <h2>✨ 几个值得注意的特点</h2>
+            <ul>
+                <li><strong>赛事数据覆盖较全</strong> —— 支持多联赛分级查看，且数据更新频率在可接受范围内。</li>
+                <li><strong>社区内容有一定质量</strong> —— 用户发帖需通过基础审核，水帖与广告相对较少。</li>
+                <li><strong>移动端适配自然</strong> —— 不需要额外缩放即可阅读主要信息。</li>
+                <li><strong>无强制注册</strong> —— 大部分内容对访客开放，仅互动功能需登录。</li>
+            </ul>
+        </div>
+
+        <!-- 场景双卡片 -->
+        <div class="scenario-row">
+            <div class="card">
+                <h2>🧭 适合这样的使用场景</h2>
+                <ul>
+                    <li>早晨快速浏览前一晚的赛果与积分变化。</li>
+                    <li>赛季中期跟踪球队状态与射手榜。</li>
+                    <li>在比赛日查看实时文字直播或评论区讨论。</li>
+                    <li>寻找特定联赛的历史交锋记录。</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>⚠️ 使用前可以了解的几点</h2>
+                <ul>
+                    <li>部分深度数据（如球员热图、预期进球）暂未提供。</li>
+                    <li>社区内容由用户生成，注意甄别信息准确性。</li>
+                    <li>页面加载速度中等，图片较多的板块需稍候。</li>
+                    <li>无官方移动应用，建议通过浏览器添加到主屏幕。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要卡片 -->
+        <div class="card">
+            <h2>❓ 常见问题摘要 <span class="badge-light">初衷说明</span></h2>
+            <div class="faq-item">
+                <strong>这个网站主要用来做什么？</strong>
+                <p>提供体育新闻、比分、数据统计以及用户讨论。可以理解为垂直类的体育信息聚合。</p>
+            </div>
+            <div class="faq-item">
+                <strong>需要付费吗？</strong>
+                <p>目前基础功能免费，未发现强制收费项目。将来若有变动请以站内公告为准。</p>
+            </div>
+            <div class="faq-item">
+                <strong>数据来源可靠吗？</strong>
+                <p>站点标注的数据来源于合作数据商及官方渠道，但仍建议对关键信息做交叉核对。</p>
+            </div>
+            <hr>
+            <p style="font-size: 0.95rem; color: #3b4a5a;">
+                如果你正寻找一个可以日常使用的体育信息平台，不妨从 <a href="https://cnsite--ngsports.com">NG体育</a> 开始体验。它不是一个万能工具，但在资讯获取与社区交流方面有自己的定位。
+            </p>
+        </div>
+
+        <!-- 尾注：可信但克制的说明 -->
+        <div class="footer-note">
+            <p>本页仅为功能介绍，不构成任何保证或推荐。使用任何平台前请自行判断其内容是否满足你的需求。</p>
+            <p style="margin-top: 0.3rem;">主要链接：<a href="https://cnsite--ngsports.com">NG体育</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
